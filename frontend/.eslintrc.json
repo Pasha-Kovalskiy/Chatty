@@ -1,0 +1,14 @@
+{
+  "parser": "@babel/eslint-parser",
+  "extends": ["alloy", "alloy/react"],
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "rules": {
+    "semi": "warn",
+    "comma-dangle": ["warn", "always-multiline"],
+    "quotes": ["warn", "single"]
+  }
+}
