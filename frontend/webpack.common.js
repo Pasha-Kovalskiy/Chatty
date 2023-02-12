@@ -6,7 +6,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'index.js'),
   output: {
-    filename: 'bundle.[fullhash].js',
+    filename: 'static/js/bundle.[fullhash].js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
@@ -28,16 +28,23 @@ module.exports = {
         test: /\.(sc|sa|c)ss$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif|webp)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/img/[name][ext]',
+        },
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'public', 'index.html'),
-      minify: false,
+      // minify: false,
     }),
     new MiniCssExtractPlugin({
-      filename: 'styles.[fullhash].css',
+      filename: 'static/css/styles.[fullhash].css',
     }),
     new CleanWebpackPlugin(),
   ],
