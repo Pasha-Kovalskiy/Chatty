@@ -1,29 +1,30 @@
 import { useState, useEffect } from 'react';
 import './App.scss';
 
-import CardList from './components/card-list/card-list.component.jsx';
+import ServersDashboard from './components/servers/servers-dashboard/servers-dashboard.component.jsx';
+
 import CategorySofa from './img/category-sofa.jpg';
+import LogoIcon from './img/logo.png';
 
 const App = () => {
   const [servers, setServers] = useState([]);
 
   useEffect(() => {
     const newServers = [
-      'Learn English',
-      'Football',
-      'BBC Channel',
-      'News for every day',
+      { name: 'Learn English', img: CategorySofa },
+      { name: 'Football', img: CategorySofa },
+      { name: 'BBC Channel', img: CategorySofa },
+      { name: 'News for every day', img: CategorySofa },
     ];
     setServers(newServers);
   }, []);
 
   return (
     <div className="App">
-      <CardList servers={servers} />
+      <ServersDashboard LogoIcon={LogoIcon} servers={servers} />
       <div className="server-panel">Server Panel</div>
       <div className="chat">Chat</div>
       <div className="chat-info">Chat Info</div>
-      <img src={CategorySofa} />
     </div>
   );
 };

@@ -1,0 +1,51 @@
+@use '../../../assets';
+
+.card {
+   $size: assets.$card-icon-size;
+   $border-radius: assets.$card-icon-border-radius;
+
+   width: $size;
+   height: $size;
+   position: relative;
+   border-radius: $border-radius;
+
+   &:not(:last-child) {
+      margin-bottom: 15px;
+   }
+
+   &::before {
+      $dash-height: 20px;
+      $dash-width: 6px;
+
+      content: '';
+      position: absolute;
+      left: -13px;
+      top: calc(50% - $dash-height/2);
+      width: $dash-width;
+      height: $dash-height;
+      background-color: white;
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+   }
+
+   &:hover {
+      &::before {
+         $dash-height: 50px;
+
+         height: $dash-height;
+         top: calc(50% - $dash-height/2);
+      }
+   }
+
+   &__link {
+      height: 100%;
+      display: inline-block;
+      border-radius: $border-radius;
+   }
+
+   &__img {
+      width: 100%;
+      height: 100%;
+      border-radius: $border-radius;
+   }
+}
