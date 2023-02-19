@@ -1,0 +1,13 @@
+@use '../../../assets';
+
+.server-dashboard {
+   $width: assets.$server-dashboard-width;
+   $background-color: assets.$server-background-color;
+
+   width: $width;
+   height: 100vh;
+   background-color: $background-color;
+   display: inline-flex;
+   flex-direction: column;
+   justify-content: space-between;
+}

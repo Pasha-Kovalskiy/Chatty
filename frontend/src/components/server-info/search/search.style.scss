@@ -1,0 +1,27 @@
+@use '../../../assets';
+
+
+.search {
+   $item-width: assets.$category-item-width;
+   $item-border-radius: assets.$category-item-border-radius;
+   $item-padding: 7px;
+   $item-color: assets.$category-item-color;
+   $item-height: assets.$search-height;
+
+   width: 100%;
+   height: $item-height;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   border-bottom: 2px solid #1B1B1B;
+
+   &__btn {
+      width: $item-width;
+      padding: $item-padding 0;
+      color: $item-color;
+      background-color: #1B1B1B;
+      border: none;
+      border-radius: $item-border-radius;
+      cursor: pointer;
+   }
+}
