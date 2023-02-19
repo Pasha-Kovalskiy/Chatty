@@ -1,0 +1,13 @@
+@use '../../../assets';
+
+.category-list {
+   $item-height: assets.$category-list-height;
+
+   width: 100%;
+   height: $item-height;
+   // margin-top: 7px;
+   // margin-bottom: 15px;
+   display: inline-flex;
+   flex-direction: column;
+   align-items: center;
+}

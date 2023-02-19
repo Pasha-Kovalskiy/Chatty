@@ -1,0 +1,11 @@
+@use '../../../assets';
+
+.messages-dashboard {
+   $item-height: assets.$messages-dashboard-height;
+
+   width: 100%;
+   max-height: $item-height;
+   display: inline-flex;
+   flex-direction: column;
+   align-items: center;
+}

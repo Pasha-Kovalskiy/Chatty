@@ -1,11 +1,13 @@
 @use '../../../assets';
 
 .servers-dashboard {
-   width: assets.$server-dashboard-width;
+   width: assets.$servers-dashboard-width;
    height: 100vh;
    display: inline-flex;
    flex-direction: column;
    align-items: center;
+   flex-grow: 0;
+   flex-shrink: 0;
 }
 
 .dash {

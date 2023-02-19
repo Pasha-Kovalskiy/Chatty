@@ -1,0 +1,55 @@
+@use '../../../assets';
+
+.category-item {
+   $item-width: assets.$category-item-width;
+   $item-border-radius: assets.$category-item-border-radius;
+   $item-color: assets.$category-item-color;
+   $item-color-hover: assets.$category-item-color-hover;
+   $item-background-color-hover: assets.$category-item-background-color-hover;
+   $item-padding: assets.$category-item-padding;
+
+   width: $item-width;
+   padding: $item-padding 0;
+   padding-left: $item-padding;
+   display: inline-flex;
+   color: $item-color;
+   background-color: inherit;
+   border-radius: $item-border-radius;
+   text-decoration: none;
+   box-sizing: border-box;
+
+   &:hover {
+      color: $item-color-hover;
+      background-color: rgb(71, 70, 70);
+
+      & svg>path {
+         stroke: $item-color-hover;
+      }
+   }
+
+   &:target,
+   &:active {
+      color: white;
+
+      & svg>path {
+         stroke: white;
+      }
+   }
+
+   &__title {
+      transform: translateY(2px);
+   }
+
+   &__icon {
+      $size: 20px;
+
+      width: $size;
+      height: $size;
+      margin-right: 5px;
+
+      svg {
+         width: 100%;
+         height: 100%;
+      }
+   }
+}

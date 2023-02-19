@@ -1,0 +1,62 @@
+@use '../../../assets';
+
+.messages-header {
+   $item-width: assets.$category-item-width;
+   $item-color: assets.$category-item-color;
+   $item-color-hover: rgb(207, 207, 207);
+   $font-size: 14px;
+
+   width: $item-width;
+   color: $item-color;
+   display: inline-flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 5px;
+
+   &:hover {
+      color: $item-color-hover;
+   }
+
+   &__title {
+      $margin-left: assets.$category-item-padding;
+
+      margin-left: $margin-left;
+      font-size: $font-size;
+      text-transform: uppercase;
+      cursor: default;
+   }
+
+   &__add-icon {
+      $size: $font-size + 2px;
+      $margin-right: assets.$category-item-padding;
+
+      margin-right: $margin-right;
+      height: $size;
+      width: $size;
+      cursor: pointer;
+
+      & svg {
+         width: 100%;
+         height: 100%;
+      }
+
+      & svg path {
+         stroke: $item-color;
+         fill: $item-color
+      }
+
+      &:hover {
+         svg path {
+            stroke: $item-color-hover;
+            fill: $item-color-hover;
+         }
+      }
+
+      &:active {
+         svg path {
+            stroke: white;
+            fill: white;
+         }
+      }
+   }
+}
