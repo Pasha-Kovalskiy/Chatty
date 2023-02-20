@@ -3,6 +3,7 @@ import './App.scss';
 
 import ServersDashboard from './components/servers/servers-dashboard/servers-dashboard.component.jsx';
 import ServerDashboard from './components/server-info/server-dashboard/server-dashboard.component.jsx';
+import ChatDashboard from './components/chat/chat-dashboard/chat-dashboard.component.jsx';
 
 import CategorySofa from './img/category-sofa.jpg';
 import LogoIcon from './img/logo.png';
@@ -131,8 +132,7 @@ const App = () => {
         messagesData={messagesData}
         profileData={profileData}
       />
-      <div className="chat">Chat</div>
-      <div className="chat-info">Chat Info</div>
+      <ChatDashboard />
     </div>
   );
 };

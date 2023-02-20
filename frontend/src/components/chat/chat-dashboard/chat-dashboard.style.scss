@@ -1,0 +1,10 @@
+@use '../../../assets';
+
+.chat-dashboard {
+  $width: assets.$chat-dashboard-width;
+
+  width: $width;
+  height: 100vh;
+  display: inline-flex;
+  flex-direction: column;
+}
