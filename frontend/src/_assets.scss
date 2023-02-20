@@ -19,3 +19,6 @@ $category-item-color: #9c9c9c;
 $category-item-color-hover: rgb(207, 207, 207);
 $category-item-background-color-hover: rgb(71, 70, 70);
 $category-item-padding: 10px;
+
+// Chat Dasboard
+$chat-dashboard-width: calc(100% - $servers-dashboard-width - $server-dashboard-width);
