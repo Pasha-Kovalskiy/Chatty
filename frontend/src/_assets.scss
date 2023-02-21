@@ -6,7 +6,7 @@ $profile-height: 9%;
 $messages-dashboard-height: 100% - $search-height - $category-list-height - $profile-height;
 
 // Servers Dashboard
-$servers-dashboard-width: 75px;
+$servers-dashboard-container-width: 75px;
 $card-icon-size: 60px;
 $card-icon-border-radius: 50%;
 
@@ -19,3 +19,6 @@ $category-item-color: #9c9c9c;
 $category-item-color-hover: rgb(207, 207, 207);
 $category-item-background-color-hover: rgb(71, 70, 70);
 $category-item-padding: 10px;
+
+// Chat Dasboard
+$chat-dashboard-width: calc(100% - $servers-dashboard-container-width - $server-dashboard-width);

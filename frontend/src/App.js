@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import './App.scss';
 
-import ServersDashboard from './components/servers/servers-dashboard/servers-dashboard.component.jsx';
+import ServersDashboardContainer from './components/servers/servers-dashboard-container/servers-dashboard-container.component.jsx';
 import ServerDashboard from './components/server-info/server-dashboard/server-dashboard.component.jsx';
+import ChatDashboard from './components/chat/chat-dashboard/chat-dashboard.component.jsx';
 
 import CategorySofa from './img/category-sofa.jpg';
 import LogoIcon from './img/logo.png';
@@ -123,16 +124,20 @@ const App = () => {
     setProfileData(newProfileData);
   }, []);
 
+  const serversDashboardData = {
+    LogoIcon,
+    servers,
+  };
+
   return (
     <div className="App">
-      <ServersDashboard LogoIcon={LogoIcon} servers={servers} />
+      <ServersDashboardContainer serversDashboardData={serversDashboardData} />
       <ServerDashboard
         categoryData={categoryData}
         messagesData={messagesData}
         profileData={profileData}
       />
-      <div className="chat">Chat</div>
-      <div className="chat-info">Chat Info</div>
+      <ChatDashboard />
     </div>
   );
 };

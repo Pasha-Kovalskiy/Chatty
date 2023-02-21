@@ -1,0 +1,13 @@
+@use '../../../assets';
+
+.server-dashboard-container {
+  $width: assets.$servers-dashboard-container-width;
+  $height: 100vh;
+
+  width: $width;
+  height: $height;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
