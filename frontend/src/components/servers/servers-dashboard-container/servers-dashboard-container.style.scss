@@ -1,13 +1,24 @@
 @use '../../../assets';
 
 .server-dashboard-container {
-  $width: assets.$servers-dashboard-container-width;
-  $height: 100vh;
+  $width: 100%;
+  $height: 100%;
 
   width: $width;
   height: $height;
   display: inline-flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+}
+
+.dash {
+  $margin: 15px;
+
+  display: inline-block;
+  width: 40%;
+  height: 2px;
+  margin-top: $margin;
+  margin-bottom: $margin;
+  border-radius: 1px;
+  background-color: #7a7c81;
 }
