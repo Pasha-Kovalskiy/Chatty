@@ -1,15 +1,19 @@
+import { Outlet } from 'react-router-dom';
+
 import './servers-dashboard.style.scss';
 
-import Logo from '../logo/logo.component.jsx';
-import ServerList from '../server-list/server-list.component.jsx';
+import ServersDashboardContainer from '../servers-dashboard-container/servers-dashboard-container.component.jsx';
+import AuthentificationIcons from '../../authentification/authentification-icons/authentification-icons.component.jsx';
 
 const ServersDashboard = ({ LogoIcon, servers }) => {
   return (
-    <div className="servers-dashboard">
-      <Logo logoIcon={LogoIcon} />
-      <div className="dash" />
-      <ServerList servers={servers} />
-    </div>
+    <>
+      <div className='servers-dashboard'>
+        <ServersDashboardContainer LogoIcon={LogoIcon} servers={servers} />
+        <AuthentificationIcons />
+      </div>
+      <Outlet />
+    </>
   );
 };
 
