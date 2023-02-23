@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import './App.scss';
 
+import { Route, Routes } from 'react-router-dom';
+
 import ServersDashboard from './components/servers/servers-dashboard/servers-dashboard.component.jsx';
 import ServerDashboard from './components/server-info/server-dashboard/server-dashboard.component.jsx';
 import ChatDashboard from './components/chat/chat-dashboard/chat-dashboard.component.jsx';
 
-import CategorySofa from './img/category-sofa.jpg';
 import LogoIcon from './img/logo.png';
+import CategorySofa from './img/category-sofa.jpg';
 import FriendsIcon from './img/icons/friends-icon.svg';
 import FavoriteIcon from './img/icons/favorite-icon.svg';
 import MessagesAddIcon from './img/icons/messages-add-icon.svg';
@@ -125,14 +127,24 @@ const App = () => {
   }, []);
 
   return (
-    <div className='App'>
-      <ServersDashboard LogoIcon={LogoIcon} servers={servers} />
-      <ServerDashboard
-        categoryData={categoryData}
-        messagesData={messagesData}
-        profileData={profileData}
-      />
-      <ChatDashboard />
+    <div className='app'>
+      <Routes>
+        <Route
+          path='/'
+          element={<ServersDashboard LogoIcon={LogoIcon} servers={servers} />}>
+          <Route
+            path='me'
+            element={
+              <ServerDashboard
+                categoryData={categoryData}
+                messagesData={messagesData}
+                profileData={profileData}
+              />
+            }>
+            <Route index path='chat' element={<ChatDashboard />} />
+          </Route>
+        </Route>
+      </Routes>
     </div>
   );
 };
